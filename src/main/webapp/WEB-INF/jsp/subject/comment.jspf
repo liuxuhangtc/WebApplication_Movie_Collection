@@ -1,0 +1,48 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!-- Modal -->
+<div class="modal fade" id="comment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add review and collect</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row-fluid">
+                    <form class="form-horizontal" id="form_comment" role="form" action="/comment/post"
+                          method="POST">
+                        <input type="hidden" name="subjectId" value="${subject.id}"/>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Score</label>
+
+                            <div class="col-sm-5">
+                                <input type="number" class="form-control" id="txt_rating" name="rating" value="10"
+                                       max="10" min="1"
+                                       placeholder="Please select a score"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Comment</label>
+
+                            <div class="col-sm-5">
+                                <textarea class="form-control" id="txt_content" name="content"
+                                          placeholder="Please enter your comment"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group margin-top-40">
+                            <div class="col-sm-offset-3 col-sm-10">
+                                <button type="submit" class="btn btn-info" id="login-submit">Submit
+                                </button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
